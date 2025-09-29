@@ -5,7 +5,7 @@
 #### First of all, we will open a sample .pcap file in Wireshark. Here it is:
 <img width="1919" height="1018" alt="pcap_file" src="https://github.com/user-attachments/assets/48e0e568-6684-4ce9-a944-ae45597fd70b" />
 
-#### We notice that the attacker is trying to access the FTP service:
+#### Scrolling thruogh the .pcap file, we notice that the attacker is trying to access the FTP service:
 <img width="1919" height="1017" alt="ftp_requests" src="https://github.com/user-attachments/assets/3065c0f2-b484-4a53-bfc7-6872d048730e" />
 
 #### Following the TCP stream of a suspicious packet, we can access the entire conversation between the attacker and service:
