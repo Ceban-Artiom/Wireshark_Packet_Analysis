@@ -28,7 +28,7 @@ The first step is to open a sample `.pcap` file in Wireshark. This file serves a
 #### The analysis shows that the password used was "password123." Please note that such passwords are considered weak and can be easily compromised through brute-force attacks.
 <img width="1306" height="685" alt="correct_password" src="https://github.com/user-attachments/assets/f6e31d2e-8cb3-4c3d-8c67-67e5ddf87372" />
 
-#### The current FTP working directory also can be figured out. We use ftp.response.code == 257 because 257 is the FTP reply code that returns the server's current working directory, usually in response to the PWD (Print Working Directory) command. This makes it a reliable filter to quickly identify and confirm the active directory during analysis.
+#### The current FTP working directory also can be figured out. We use "ftp.response.code == 257" because 257 is the FTP reply code that returns the server's current working directory, usually in response to the PWD (Print Working Directory) command. This makes it a reliable filter to quickly identify and confirm the active directory during analysis.
 #### So, the current working directory is "/var/www/html":
 <img width="1919" height="1020" alt="active_ftp_directory" src="https://github.com/user-attachments/assets/40a66820-c3a9-405a-a3bf-b6a03b51144a" />
 
