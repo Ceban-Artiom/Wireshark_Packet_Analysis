@@ -1,11 +1,16 @@
 # Wireshark Packet Analysis
----
-## Summary:
-### This project demonstrates the fundamentals of network traffic analysis using Wireshark. It contains sample captures, screenshots, and step-by-step notes that show how to filter, and follow streams.
----
-## Basic Analysis:
 
-#### First of all, we will open a sample .pcap file in Wireshark. Here it is:
+---
+
+## Summary
+This project demonstrates the fundamentals of network traffic analysis using **Wireshark**. It includes sample captures, annotated screenshots, and step-by-step instructions to filter traffic, follow streams, and interpret key protocols. The goal is to provide a clear, beginner-friendly guide for basic packet-level investigation.
+
+---
+
+## Basic Analysis
+The first step is to open a sample `.pcap` file in Wireshark. This file serves as the starting point for practicing capture inspection, filtering, and stream analysis.
+
+
 <img width="1919" height="1018" alt="pcap_file" src="https://github.com/user-attachments/assets/48e0e568-6684-4ce9-a944-ae45597fd70b" />
 
 #### Scrolling through the .pcap file, we notice that the attacker is trying to access the FTP service:
