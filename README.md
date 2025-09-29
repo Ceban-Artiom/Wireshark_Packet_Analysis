@@ -1,8 +1,7 @@
 # Wireshark Packet Analysis
 ## Summary:
-
 ### This project demonstrates the fundamentals of network traffic analysis using Wireshark. It contains sample captures, screenshots, and step-by-step notes that show how to filter, and follow streams.
-
+---
 ## Basic Analysis:
 
 #### First of all, we will open a sample .pcap file in Wireshark. Here it is:
