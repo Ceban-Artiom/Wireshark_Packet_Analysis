@@ -22,7 +22,7 @@ The first step is to open a sample `.pcap` file in Wireshark. This file serves a
 #### The attacker is trying to use different credentials to log in, but all the attempts are unsuccessful. Eventually, he managed to log in, as we found a packet mentioning "Login successful":
 <img width="1919" height="1018" alt="login_successful" src="https://github.com/user-attachments/assets/bc442818-424d-49c2-90f3-157f0658163f" />
 
-#### Using Follow -> TCP Stream on the relevant packet, we reviewed the client–service conversation:
+#### Using Follow -> TCP Stream on the relevant packet, we reviewed the client-service conversation:
 <img width="1919" height="1023" alt="tcp_follow_login" src="https://github.com/user-attachments/assets/0b7f18a9-8c63-4d55-8cc9-3918460c05f1" />
 
 #### The analysis shows that the password used was "password123." Please note that such passwords are considered weak and can be easily compromised through brute-force attacks.
