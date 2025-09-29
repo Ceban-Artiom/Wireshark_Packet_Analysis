@@ -51,8 +51,7 @@ The first step is to open a sample `.pcap` file in Wireshark. This file serves a
 
 #### To see other commands used by attacker, we need to scroll and analyse the entire client-service exchange. For instance, the "sudo su" command was executed to gain a root shell, etc.
 
-### Thank you for going through this Wireshark primer. It covers the basics of following streams, analyzing FTP/HTTP traffic, and extracting key information. There's much more to explore: advanced protocol analysis, decryption, and artifact extraction, etc. Mastering these fundamentals provides a solid foundation for further study.
-
+### Thank you for going through this Wireshark primer. It covers the basics of following streams, analysing FTP traffic, and extracting key information. 
 
 
 
