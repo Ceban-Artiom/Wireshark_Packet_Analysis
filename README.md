@@ -16,6 +16,7 @@ The first step is to open a sample `.pcap` file in Wireshark. This file serves a
 
 #### Following the TCP stream of a suspicious packet, we can access the entire conversation between the attacker and service:
 <img width="1919" height="1018" alt="follow_tcp_stream" src="https://github.com/user-attachments/assets/b6dc7c09-eaed-4634-9516-0e1c94af1d3c" />
+
 <img width="1302" height="686" alt="trying_to_log_in" src="https://github.com/user-attachments/assets/8893a268-9f7e-4e29-9ed8-b714884d3883" />
 
 #### The attacker is trying to use different credentials to log in, but all the attempts are unsuccessful. Eventually, he managed to log in, as we found a packet mentioning "Login successful":
