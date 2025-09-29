@@ -1,30 +1,29 @@
 # Wireshark Packet Analysis
 ## Summary:
-### This project demonstrates the fundamentals of network traffic analysis using Wireshark. It contains sample captures, screenshots, and step-by-step notes that show how to filter, follow streams, and interpret common protocols.
+### This project demonstrates the fundamentals of network traffic analysis using Wireshark. It contains sample captures, screenshots, and step-by-step notes that show how to filter, and follow streams.
 
 #### First of all, we will open a sample .pcap file in Wireshark. Here it is:
 <img width="1919" height="1018" alt="pcap_file" src="https://github.com/user-attachments/assets/48e0e568-6684-4ce9-a944-ae45597fd70b" />
 
-#### Scrolling thruogh the .pcap file, we notice that the attacker is trying to access the FTP service:
+#### Scrolling through the .pcap file, we notice that the attacker is trying to access the FTP service:
 <img width="1919" height="1017" alt="ftp_requests" src="https://github.com/user-attachments/assets/3065c0f2-b484-4a53-bfc7-6872d048730e" />
 
 #### Following the TCP stream of a suspicious packet, we can access the entire conversation between the attacker and service:
-
 <img width="1919" height="1018" alt="follow_tcp_stream" src="https://github.com/user-attachments/assets/b6dc7c09-eaed-4634-9516-0e1c94af1d3c" />
 <img width="1302" height="686" alt="trying_to_log_in" src="https://github.com/user-attachments/assets/8893a268-9f7e-4e29-9ed8-b714884d3883" />
 
 #### The attacker is trying to use different credentials to log in, but all the attempts are unsuccessful. Eventually, he managed to log in, as we found a packet mentioning "Login successful":
 <img width="1919" height="1018" alt="login_successful" src="https://github.com/user-attachments/assets/bc442818-424d-49c2-90f3-157f0658163f" />
 
-#### Using Follow -> TCP Stream on the relevant packet, we reviewed the client–service conversation.
+#### Using Follow -> TCP Stream on the relevant packet, we reviewed the client–service conversation:
 <img width="1919" height="1023" alt="tcp_follow_login" src="https://github.com/user-attachments/assets/0b7f18a9-8c63-4d55-8cc9-3918460c05f1" />
 
 #### The analysis shows that the password used was "password123." Please note that such passwords are considered weak and can be easily compromised through brute-force attacks.
 <img width="1306" height="685" alt="correct_password" src="https://github.com/user-attachments/assets/f6e31d2e-8cb3-4c3d-8c67-67e5ddf87372" />
 
-#### The current FTP working directory also can be figured out. We use ftp.response.code == 257 because 257 is the FTP reply code that returns the server's current working directory, usually in response to the PWD command. This makes it a reliable filter to quickly identify and confirm the active directory during analysis.
+#### The current FTP working directory also can be figured out. We use ftp.response.code == 257 because 257 is the FTP reply code that returns the server's current working directory, usually in response to the PWD (Print Working Directory) command. This makes it a reliable filter to quickly identify and confirm the active directory during analysis.
+#### So, the current working directory is "/var/www/html":
 <img width="1919" height="1020" alt="active_ftp_directory" src="https://github.com/user-attachments/assets/40a66820-c3a9-405a-a3bf-b6a03b51144a" />
-##### So, the current working directory is "/var/www/html".
 
 #### In cases where a backdoor was uploaded, the filename can often be determined from the packet capture. We use "ftp-data" as a filter because FTP separates control and data: the control channel sends commands like STOR <filename>, while the data channel carries the file contents. Inspecting ftp-data lets us verify the uploaded file and, together with the control channel, confirm its filename.
 <img width="1918" height="703" alt="ftp-data_filter" src="https://github.com/user-attachments/assets/fc9d41ea-b6d2-4fa9-ae35-eacfe1489f6b" />
@@ -44,7 +43,7 @@
 #### In order to spawn a new TTY shell the attacker executed this command "python3 -c 'import pty; pty.spawn("/bin/bash")'". A TTY shell is an interactive shell attached to a pseudo‑terminal (pty) (e.g., /dev/pts/0) that provides full terminal semantics - line editing, job control (Ctrl‑Z/Ctrl‑C), and proper behavior for interactive programs.
 <img width="1298" height="681" alt="command_tty_shell" src="https://github.com/user-attachments/assets/64e129f1-359c-433a-bb74-4ed163bd10cb" />
 
-#### To see other commands used by attacker, we need to scroll and analyze the entire client-service exchange. For instance, the "sudo su" command was executed to gain a root shell, etc.
+#### To see other commands used by attacker, we need to scroll and analyse the entire client-service exchange. For instance, the "sudo su" command was executed to gain a root shell, etc.
 
 ### Thank you for going through this Wireshark primer. It covers the basics of following streams, analyzing FTP/HTTP traffic, and extracting key information. There's much more to explore: advanced protocol analysis, decryption, and artifact extraction, etc. Mastering these fundamentals provides a solid foundation for further study.
 
