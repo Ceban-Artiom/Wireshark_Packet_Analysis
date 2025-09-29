@@ -1,7 +1,5 @@
 # Wireshark Packet Analysis
 
----
-
 ## Summary
 This project demonstrates the fundamentals of network traffic analysis using **Wireshark**. It includes sample captures, annotated screenshots, and step-by-step instructions to filter traffic, follow streams, and interpret key protocols. The goal is to provide a clear, beginner-friendly guide for basic packet-level investigation.
 
